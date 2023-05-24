@@ -1,3 +1,5 @@
+//Дано дерево. Вывести путь от корня до узла X.
+
 #include <iostream>
 #include <string>
 #include <queue>
@@ -66,42 +68,29 @@ void insert(tree*& tr, int x) {			//функция вставки
 	}
 }
 
-tree *Min(tree *tr){//поиск min
-    if (!tr->left) return tr;
-    else return Min(tr->left);
-}
-tree *Max(tree *tr){//поиск max
-    if (!tr->right) return tr;
-    else return Max(tr->right);
-}
 
 tree *find(tree *tr, int x){//поиск
-    if (!tr || x == tr->inf){
-        cout << tr->inf << endl;
+    if (!tr || x == tr->inf)//нашли или дошли до конца ветки
         return tr;
-    }
-    if (x < tr->inf){
-        cout << tr->inf << endl;
-        return find(tr->left, x);
-
-    }
-    else{
-        cout << tr->inf << endl;
-        return find(tr->right, x);
-    }
+    if (x < tr->inf)
+        return find(tr->left, x);//ищем по левой ветке 
+    else
+        return find(tr->right, x);//ищем по правой ветке 
 }
 
-tree* Path(tree *tr, int x){//поиск предыдущего 
-    tree *n = find(tr, x);
-    if (n->left)
-        return Max(n->left);
-    tree *y = n->parent;
-    while(y && n == y->left){
-        n = y;
-        y = y ->parent; 
+void Path(tree *tr, int x){//поиск пути
+    while (tr->inf != x){
+        if (x < tr->inf){
+            cout << tr->inf << endl;
+            tr = tr->left;
+        }
+        if (x > tr->inf){
+            cout << tr->inf << endl;
+            tr = tr->right;
+        }
     }
-    return y;
-}
+}    
+
 
 void print(tree *tr, int k){//вывод дерева
     if (! tr ) cout << "Empty tree\n"; 
@@ -158,7 +147,7 @@ int main() {
     cout << "Введите элемент X" << endl;
     cin >> el;
 	cout << "Ответ: " << endl;
-    tree* tr1 = Path(tr, el);
+    Path(tr, el);
 
 	return 0;
 }
