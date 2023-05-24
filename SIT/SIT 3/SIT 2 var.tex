@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[12pt]{extsizes}
+\usepackage{fancyvrb}
+\usepackage{indentfirst}
+\usepackage[
+  left=2cm, right=2cm, top=2cm, bottom=2cm, headsep=0.2cm, footskip=0.6cm, bindingoffset=0cm
+]{geometry}
+\usepackage[english,russian]{babel}
+
+\begin{document}
+\section*{Вариант 2}
+
+Учитывая введенные переменные, и что в рассматриваемой постановке $\psi = o(1)$, $\upsilon_m/\omega_m = O(1)$, в нулевом приближении по $\psi$ и $\lambda$ получим линеаризованную задачу гидроупругости пульсирующего слоя жидкости в канале в виде уравнений динамики слоя жидкости
+
+\begin{equation}
+    \Re\frac{\partial\it U_{\xi0}}{\partial\tau} = -\frac{\partial P_0}{\partial\xi} + \frac{\partial^2 \it U_{\xi0}}{\partial\zeta^2}, \;\;\;\;
+    \frac{\partial P_0}{\partial\zeta}=0,\;\;\;\;   \frac{\partial\it U_{\xi0}}{\partial\xi} + \frac{\partial \it U_{\zeta0}}{\partial\zeta}=0,
+\end{equation}
+с граничными условиями
+
+\begin{equation}
+    \it U_{\xi0} = \text{0}, \; \it U_{\zeta0} = \partial\text{W}/\partial\tau \text{ при } \zeta = \text{1}; \;\;\; U_{\xi0} = \text{0}, \;U_{\zeta0} = \text{0} \text{ при } \zeta = \text{0};
+\end{equation}
+\begin{equation}
+    P = P^+(\tau) \text{ при } \xi = 1; \;\;\; P = 0 \text{ при } \xi = -1;
+\end{equation}
+и уравнения движения пластинки-стенки канала
+
+\begin{equation}
+    \frac{Dw_m}{\ell^4} \frac{\partial^4W}{\partial\xi^4} + \rho_0h_0\omega^2w_m\frac{\partial^2W}{\partial\tau^2} = p_0+\frac{w_m\rho\nu\omega}{\delta_0\psi^2}P
+\end{equation}
+с граничными условиями
+
+\begin{equation}
+    W = \partial^2W/\partial\xi^2 = 0 \text{ при }\xi = \pm1
+\end{equation}
+
+\end{document}
+
